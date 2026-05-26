@@ -108,7 +108,7 @@ def remove_bg():
     client = replicate.Client(api_token=token)
     try:
         output = client.run(
-            "cjwbw/rembg",
+            "851-labs/background-remover",
             input={"image": data_url}
         )
         result = fetch_replicate_output(output)
