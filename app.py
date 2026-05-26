@@ -108,7 +108,7 @@ def remove_bg():
     client = replicate.Client(api_token=token)
     try:
         output = client.run(
-            "stability-ai/stable-diffusion-2-inpainting",
+            "cjwbw/rembg",
             input={"image": data_url}
         )
         result = fetch_replicate_output(output)
@@ -130,7 +130,7 @@ def inpaint():
     mask_data  = body.get("mask")    # data URL masky (bílá = opravit)
     prompt     = body.get("prompt", "product clothing on clean studio background, seamless texture")
     neg_prompt = body.get("neg_prompt", "hand, finger, pointer, stick, ruler, arm, pen, blur, distortion, artifacts")
-    model      = body.get("model", "sd2")  # "sd2" nebo "flux"
+    model      = body.get("model", "flux")  # "flux" nebo "sd2"
 
     if not image_data or not mask_data:
         return jsonify({"error": "Chybí image nebo mask"}), 400
