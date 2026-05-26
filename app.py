@@ -108,7 +108,7 @@ def remove_bg():
     client = replicate.Client(api_token=token)
     try:
         output = client.run(
-            "cjwbw/rembg:fb8af171cfa1616ddcf1242c093f9c46bcada5ad4cf6f2fbe8b81b330ec05d04",
+            "stability-ai/stable-diffusion-2-inpainting",
             input={"image": data_url}
         )
         result = fetch_replicate_output(output)
@@ -165,7 +165,7 @@ def inpaint():
             )
         else:  # výchozí: stable-diffusion-2-inpainting
             output = client.run(
-                "stability-ai/stable-diffusion-2-inpainting:e490d072a34a94a11e9711ed5a6ba621c3fab884eda1665d9d3a282d65a21180",
+                "stability-ai/stable-diffusion-2-inpainting",
                 input={
                     "image":            img_url,
                     "mask":             mask_url,
